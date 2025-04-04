@@ -1,9 +1,50 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberFlow.API", "BarberFlow.API\BarberFlow.API.csproj", "{6370E0EE-C266-4A9F-BC7F-D3223F063A96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberFlow.Application", "BarberFlow.Application\BarberFlow.Application.csproj", "{A8A566E3-F317-41BD-A28E-CB04EE7AFAE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberFlow.Domain", "BarberFlow.Domain\BarberFlow.Domain.csproj", "{0FA823B6-FAE0-43B0-A179-3B22A58997D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberFlow.Infra.Data", "BarberFlow.Infra.Data\BarberFlow.Infra.Data.csproj", "{173B721C-98E2-4E77-B8ED-51B2C7B4DCE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarberFlow.IoC", "BarberFlow.IoC\BarberFlow.IoC.csproj", "{780D98BF-8855-40EC-A048-13F9D32ECF9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6370E0EE-C266-4A9F-BC7F-D3223F063A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6370E0EE-C266-4A9F-BC7F-D3223F063A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6370E0EE-C266-4A9F-BC7F-D3223F063A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6370E0EE-C266-4A9F-BC7F-D3223F063A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A566E3-F317-41BD-A28E-CB04EE7AFAE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A566E3-F317-41BD-A28E-CB04EE7AFAE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A566E3-F317-41BD-A28E-CB04EE7AFAE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A566E3-F317-41BD-A28E-CB04EE7AFAE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FA823B6-FAE0-43B0-A179-3B22A58997D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FA823B6-FAE0-43B0-A179-3B22A58997D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FA823B6-FAE0-43B0-A179-3B22A58997D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FA823B6-FAE0-43B0-A179-3B22A58997D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{173B721C-98E2-4E77-B8ED-51B2C7B4DCE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{173B721C-98E2-4E77-B8ED-51B2C7B4DCE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{173B721C-98E2-4E77-B8ED-51B2C7B4DCE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{173B721C-98E2-4E77-B8ED-51B2C7B4DCE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{780D98BF-8855-40EC-A048-13F9D32ECF9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{780D98BF-8855-40EC-A048-13F9D32ECF9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{780D98BF-8855-40EC-A048-13F9D32ECF9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{780D98BF-8855-40EC-A048-13F9D32ECF9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
