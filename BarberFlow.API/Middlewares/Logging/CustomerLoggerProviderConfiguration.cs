@@ -1,8 +1,7 @@
 ﻿namespace BarberFlow.API.Middlewares.Logging;
 
-public class CustomerLoggerProviderConfiguration
+public class CustomLoggerProviderConfiguration
 {
-    public LogLevel loglevel { get; set; } = LogLevel.Warning;
+    public LogLevel LogLevel { get; set; } = LogLevel.Warning;
     public int EventId { get; set; } = 0;
-
 }
