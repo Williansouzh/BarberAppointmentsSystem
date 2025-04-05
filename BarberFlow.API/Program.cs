@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddInfrastructureSwagger();
 builder.Services.AddControllers(options => 
     options.Filters.Add(typeof(ApiExceptionFilter)))
 .AddJsonOptions(options =>
@@ -31,7 +32,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
