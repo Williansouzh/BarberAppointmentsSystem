@@ -44,7 +44,7 @@ public class TokenController : ControllerBase
         if (!result)
             return Unauthorized();
         var token = GenerateToken(userLoginDto);
-        return Ok();
+        return Ok(token);
     }
     private UserTokenDTO GenerateToken(LoginUserDTO userInfo)
     {
