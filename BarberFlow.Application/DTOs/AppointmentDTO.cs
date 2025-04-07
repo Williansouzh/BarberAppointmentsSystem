@@ -6,7 +6,7 @@ namespace BarberFlow.Application.DTOs
 {
     public class AppointmentDTO
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "A data e hora são obrigatórias.")]
         [DataType(DataType.DateTime)]

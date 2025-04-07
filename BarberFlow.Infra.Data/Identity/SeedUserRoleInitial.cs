@@ -8,12 +8,12 @@ using Microsoft.AspNetCore.Identity;
 
 namespace BarberFlow.Infra.Data.Identity;
 
-public  class ISeedUserRoleInitial : ISeedRoleInitial
+public  class SeedUserRoleInitial : ISeedRoleInitial
 {
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly RoleManager<IdentityRole> _roleManager;
 
-    public ISeedUserRoleInitial(
+    public SeedUserRoleInitial(
         UserManager<ApplicationUser> userManager,
         RoleManager<IdentityRole> _roleManager)
     {

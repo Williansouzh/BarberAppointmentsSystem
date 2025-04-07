@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BarberFlow.Application.Commands.Appointments;
+namespace BarberFlow.IoC;
 
-public class ApppointmentCreateCommand : AppointmentCommand
+public class DependencyInjectionJwt
 {
-
 }

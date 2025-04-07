@@ -33,7 +33,7 @@ public static class DependencyInjection
         services.AddScoped<IAppointmentRepository, AppointmentRepository>();
 
         services.AddScoped<IAuthenticate, AuthenticateService>();
-        services.AddScoped<ISeedRoleInitial, ISeedRoleInitial>();
+        services.AddScoped<ISeedRoleInitial, SeedUserRoleInitial>();
         // Register Unit of Work
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         return services;

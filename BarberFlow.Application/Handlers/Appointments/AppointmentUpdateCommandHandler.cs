@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BarberFlow.Application.Commands.Appointments;
 using BarberFlow.Domain.Entities;
 using BarberFlow.Domain.Interfaces;
+using BarberFlow.Infra.Data.Persistence;
 using MediatR;
 
 namespace BarberFlow.Application.Handlers.Appointments;
@@ -13,11 +14,12 @@ namespace BarberFlow.Application.Handlers.Appointments;
 public class AppointmentUpdateCommandHandler : IRequestHandler<AppointmentUpdateCommand, Appointment>
 {
     private readonly IAppointmentRepository _appointmentRepository;
-
-    public AppointmentUpdateCommandHandler(IAppointmentRepository appointmentRepository)
+    private readonly IUnitOfWork _unitOfWork;
+    public AppointmentUpdateCommandHandler(IAppointmentRepository appointmentRepository, IUnitOfWork unitOfWork)
     {
         _appointmentRepository = appointmentRepository ?? throw new
             ArgumentNullException(nameof(appointmentRepository));
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<Appointment> Handle(AppointmentUpdateCommand request, CancellationToken cancellationToken)
@@ -35,6 +37,7 @@ public class AppointmentUpdateCommandHandler : IRequestHandler<AppointmentUpdate
             {
                 throw new ApplicationException("Error updating Appointment");
             }
+            await _unitOfWork.CommitAsync();
             return updated;
         }
 

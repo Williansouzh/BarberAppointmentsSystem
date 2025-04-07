@@ -1,29 +1,29 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.OpenApi.Models;
-namespace BarberFlow.IoC;
 
-public static class DependencyInjectionSwagger
+namespace CleanArchMvc.Infra.IoC
 {
-    public static IServiceCollection AddInfrastructureSwagger(this IServiceCollection services)
+    public static class DependencyInjectionSwagger
     {
-        services.AddSwaggerGen(c =>
+        public static IServiceCollection AddInfrastructureSwagger(this IServiceCollection services)
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "CleanArchMvc.API", Version = "v1" });
-
-            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+            services.AddSwaggerGen(c =>
             {
-                //definir configuracoes
-                Name = "Authorization",
-                Type = SecuritySchemeType.ApiKey,
-                Scheme = "Bearer",
-                BearerFormat = "JWT",
-                In = ParameterLocation.Header,
-                Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] " +
-                "and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
-            });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BarberFlow.API", Version = "v1" });
 
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    //definir configuracoes
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] " +
+                    "and then your token in the text input below.\r\n\r\nExample: \"Bearer 12345abcdef\"",
+                });
+
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                       {
                           new OpenApiSecurityScheme
@@ -37,7 +37,8 @@ public static class DependencyInjectionSwagger
                             new string[] {}
                     }
                 });
-        });
-        return services;
+            });
+            return services;
+        }
     }
 }

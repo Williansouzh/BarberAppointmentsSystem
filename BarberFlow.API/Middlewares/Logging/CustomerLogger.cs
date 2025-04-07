@@ -1,7 +1,7 @@
 ﻿namespace BarberFlow.API.Middlewares.Logging;
 
 
-public class CustomerLogger
+public class CustomerLogger : ILogger
 {
     readonly string loggerName;
     readonly CustomLoggerProviderConfiguration loggerConfig;
@@ -29,7 +29,8 @@ public class CustomerLogger
     }
     private void WritteTextOnFile(string mensagem)
     {
-        string caminhoArquivoLog = @"d:\dados\log\Wilian_Log.txt";
+        string caminhoArquivoLog = @"c:\dados\log\Wilian_Log.txt";
+
         using (StreamWriter streamWriter = new StreamWriter(caminhoArquivoLog, true))
         {
             try
